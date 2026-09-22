@@ -1,14 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <rect width="100%" height="100%" fill="none"/>
-  <g transform="translate(4, 16)">
-    <!-- Custom stylized V -->
-    <path d="M 0,0 L 3,10 L 7,0 L 6,0 L 3,7 L 1,0 Z" fill="#0e1c2f"/>
-    <path d="M 3,3 L 5,9" stroke="#0e1c2f" stroke-width="1" stroke-linecap="round"/>
-    
-    <!-- Text 'uln' in Navy -->
-    <text x="8" y="8" font-family="Arial, sans-serif" font-weight="900" font-size="8" fill="#0e1c2f" letter-spacing="-0.3">uln</text>
-    
-    <!-- Text 'Guard' in Teal -->
-    <text x="20" y="8" font-family="Arial, sans-serif" font-weight="900" font-size="8" fill="#0b6e67" letter-spacing="-0.3">Guard</text>
+  <g transform="translate(16, 12)">
+    <!-- Stylized V shield shape -->
+    <path d="M 0,0 L 16,40 L 32,0 L 26,0 L 16,28 L 6,0 Z" fill="#0e1c2f"/>
+    <!-- Accent line -->
+    <path d="M 10,12 L 22,36" stroke="#0b6e67" stroke-width="4" stroke-linecap="round"/>
   </g>
 </svg>
