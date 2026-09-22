@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uvjeti korištenja — Vulnguard</title>
+    <title>Pisati CSS koji drugi razumiju — Vulnguard</title>
     <link rel="icon" href="vulnguard_icon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,20 +31,81 @@
         </div>
     </header>
     <main id="sadrzaj">
-        <div class="wrap page-hero prose">
-            <p class="crumbs"><a href="index.html">Naslovnica</a> / Uvjeti korištenja</p>
-            <h1>Uvjeti korištenja</h1>
-            <p>Korištenjem stranice vulnguard.hr (u vježbi: ovih HTML datoteka) prihvaćate sljedeće.</p>
-            <h2>Sadržaj</h2>
-            <p>Članci su informativni. Nisu pravni savjet niti jamstvo da vaša ustanova nema rizika. Usluge analize i edukacije ugovaraju se posebno, prema cjeniku i ponudi.</p>
-            <h2>Obrasci</h2>
-            <p>Unosite točne podatke. Zabranjeno je slati tuđe e-adrese bez pristanka, uvredljiv sadržaj ili pokušaje zloupotrebe obrazaca (masovno slanje, lažni URL-ovi radi ometanja rada).</p>
-            <h2>Intelektualno vlasništvo</h2>
-            <p>Logotip, tekstovi i fotografije tima vlasništvo su Vulnguard d.o.o., osim gdje je navedeno drugačije. Smijete dijeliti poveznice na članke, ne smijete ih predstavljati kao vlastiti rad.</p>
-            <h2>Odgovornost</h2>
-            <p>Trudimo se da sve poveznice rade. Ako pronađete grešku, javite na info@vulnguard.hr. Vanjske stranice (LinkedIn, Messenger, Google karte, Mailchimp) imaju vlastita pravila.</p>
-            <p>Povezano: <a href="privatnost.html">Politika privatnosti</a>.</p>
+        <div class="wrap page-hero">
+            <p class="crumbs"><a href="index.html">Naslovnica</a> / <a href="clanci.html">Novosti</a> / Pisati CSS koji drugi razumiju</p>
+            <h1>Pisati CSS koji drugi razumiju</h1>
+            <p class="meta">Autorica: Sara Novak · Objavljeno: 15. kolovoza 2026.</p>
         </div>
+        <section class="article-hero">
+            <div class="wrap">
+                <img src="assets/clanak-css.jpg" alt="Odrasli polaznici na edukaciji" style="border-radius:14px; max-height:420px; width:100%; object-fit:cover;">
+            </div>
+        </section>
+        <section>
+            <div class="wrap prose">
+                <p class="lead">Imena klasa, razmaci, boje s dovoljnim kontrastom i prilagodba za mobitel.</p>
+                
+                <h2>Imena klasa i selektora</h2>
+                <p>Koristite opisna imena koja kažu što element radi, ne kako izgleda.</p>
+                
+                <h3>Loše primjeri</h3>
+                <pre><code>.red-box { }
+.big-text { }
+.padding-10 { }</code></pre>
+                
+                <h3>Dobri primjeri</h3>
+                <pre><code>.alert-danger { }
+.hero-title { }
+.content-section { }</code></pre>
+                
+                <h2>Konzistentnost i razmaci</h2>
+                <p>Držite se jedne šeme za razmake, zagrade i imena varijabli. Čitljivost je ključ.</p>
+                
+                <h3>Šema za razmake</h3>
+                <pre><code>.card {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+}</code></pre>
+                
+                <h2>Boje i kontrast</h2>
+                <p>Koristite CSS varijable za boje i osigurajte dovoljan kontrast za pristupačnost.</p>
+                
+                <h3>CSS varijable</h3>
+                <pre><code>:root {
+  --primary: #0e1c2f;
+  --secondary: #0b6e67;
+  --text: #1c2430;
+  --background: #fbfaf7;
+}
+
+.button {
+  background: var(--primary);
+  color: white;
+}</code></pre>
+                
+                <h2>Pristupačnost</h2>
+                <ul>
+                    <li>Koristite semantičke HTML elemente</li>
+                    <li>Osigurajte dovoljan kontrast teksta i pozadine</li>
+                    <li>Testirajte s čitačem zaslona</li>
+                    <li>Omogućite navigaciju tipkovnicom</li>
+                </ul>
+                
+                <h2>Responsivni dizajn</h2>
+                <p>Testirajte na različitim uređajima i koristite media queries za prilagodbu.</p>
+                
+                <div class="note">
+                    <strong>Pravilo:</strong> CSS pišite za ljude, ne za strojeve. Dva mjeseca kasnije trebali biti u stanju razumjeti vlastiti kod.
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="site-footer">
         <div class="wrap footer-grid">

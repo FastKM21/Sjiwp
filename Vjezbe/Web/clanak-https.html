@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uvjeti korištenja — Vulnguard</title>
+    <title>HTTPS i obrasci bez suvišnog koda — Vulnguard</title>
     <link rel="icon" href="vulnguard_icon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,20 +31,77 @@
         </div>
     </header>
     <main id="sadrzaj">
-        <div class="wrap page-hero prose">
-            <p class="crumbs"><a href="index.html">Naslovnica</a> / Uvjeti korištenja</p>
-            <h1>Uvjeti korištenja</h1>
-            <p>Korištenjem stranice vulnguard.hr (u vježbi: ovih HTML datoteka) prihvaćate sljedeće.</p>
-            <h2>Sadržaj</h2>
-            <p>Članci su informativni. Nisu pravni savjet niti jamstvo da vaša ustanova nema rizika. Usluge analize i edukacije ugovaraju se posebno, prema cjeniku i ponudi.</p>
-            <h2>Obrasci</h2>
-            <p>Unosite točne podatke. Zabranjeno je slati tuđe e-adrese bez pristanka, uvredljiv sadržaj ili pokušaje zloupotrebe obrazaca (masovno slanje, lažni URL-ovi radi ometanja rada).</p>
-            <h2>Intelektualno vlasništvo</h2>
-            <p>Logotip, tekstovi i fotografije tima vlasništvo su Vulnguard d.o.o., osim gdje je navedeno drugačije. Smijete dijeliti poveznice na članke, ne smijete ih predstavljati kao vlastiti rad.</p>
-            <h2>Odgovornost</h2>
-            <p>Trudimo se da sve poveznice rade. Ako pronađete grešku, javite na info@vulnguard.hr. Vanjske stranice (LinkedIn, Messenger, Google karte, Mailchimp) imaju vlastita pravila.</p>
-            <p>Povezano: <a href="privatnost.html">Politika privatnosti</a>.</p>
+        <div class="wrap page-hero">
+            <p class="crumbs"><a href="index.html">Naslovnica</a> / <a href="clanci.html">Novosti</a> / HTTPS i obrasci bez suvišnog koda</p>
+            <h1>HTTPS i obrasci bez suvišnog koda</h1>
+            <p class="meta">Autor: Luka Jurić · Objavljeno: 10. kolovoza 2026.</p>
         </div>
+        <section class="article-hero">
+            <div class="wrap">
+                <img src="assets/clanak-https.jpg" alt="Staklena zgrada u plavom svjetlu" style="border-radius:14px; max-height:420px; width:100%; object-fit:cover;">
+            </div>
+        </section>
+        <section>
+            <div class="wrap prose">
+                <p class="lead">Kako HTML atributi required i type="email" pomažu korisniku, a što ostaje na poslužitelju.</p>
+                
+                <h2>Što je HTTPS?</h2>
+                <p>HTTPS (HTTP Secure) je protokol koji šifrir komunikaciju između preglednika i poslužitelja. Bez HTTPS-a, netko na istoj mreži može presresti sve što šaljete: lozinke, poruke, podatke.</p>
+                
+                <h2>Klijentska validacija u HTML-u</h2>
+                <p>HTML nudi ugrađene atribute za validaciju obrazaca. To pomaže korisnicima i smanjuje pogreške.</p>
+                
+                <h3>Ključni atributi</h3>
+                <pre><code>&lt;input type="email" required&gt;
+&lt;input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"&gt;
+&lt;input type="password" minlength="8"&gt;
+&lt;textarea required minlength="10"&gt;&lt;/textarea&gt;</code></pre>
+                
+                <h2>Što ostaje na poslužitelju</h2>
+                <p>Klijentska validacija je korisna, ali nikada nije dovoljna. Poslužitelj mora provjeriti:</p>
+                
+                <ul>
+                    <li>Duljinu i format podataka</li>
+                    <li>Postojanje korisnika u bazi</li>
+                    <li>Dostupnost resursa</li>
+                    <li>CSRF tokenove</li>
+                    <li>Rate limiting (ograničenje pokušaja)</li>
+                </ul>
+                
+                <h2>Bezbedne obrasci</h2>
+                
+                <h3>HTTPS za sve</h3>
+                <p>Svi obrasci moraju biti poslani preko HTTPS-a. Nikada ne šaljite osjetljive podatke preko HTTP-a.</p>
+                
+                <h3>CSRF zaštita</h3>
+                <p>Koristite CSRF tokene u obrascima koji mijenjaju podatke.</p>
+                
+                <h3>Rate limiting</h3>
+                <p>Ograničite broj pokušaja prijave i slanja obrazaca.</p>
+                
+                <h2>Primjer sigurnog obrasca</h2>
+                <pre><code>&lt;form action="/submit" method="POST"&gt;
+  &lt;input type="hidden" name="csrf_token" value="..."&gt;
+  
+  &lt;label&gt;
+    E-adresa
+    &lt;input type="email" name="email" required&gt;
+  &lt;/label&gt;
+  
+  &lt;label&gt;
+    Lozinka
+    &lt;input type="password" name="password" 
+           minlength="8" required&gt;
+  &lt;/label&gt;
+  
+  &lt;button type="submit"&gt;Prijava&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                
+                <div class="note">
+                    <strong>Pravilo:</strong> Nemojte se oslanjati samo na klijentsku validaciju. Uvijek ponovite provjere na poslužitelju.
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="site-footer">
         <div class="wrap footer-grid">
