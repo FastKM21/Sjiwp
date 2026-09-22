@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt — Vulnguard</title>
+    <title>Politika privatnosti — Vulnguard</title>
     <link rel="icon" href="vulnguard_icon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,64 +25,31 @@
                 <a href="usluge.html">Naše usluge</a>
                 <a href="clanci.html">Članci</a>
                 <a href="o-nama.html">O nama</a>
-                <a href="kontakt.html" aria-current="page">Kontakt</a>
+                <a href="kontakt.html">Kontakt</a>
             </nav>
         </div>
     </header>
     <main id="sadrzaj">
-        <div class="wrap page-hero">
-            <p class="crumbs"><a href="index.html">Naslovnica</a> / Kontakt</p>
-            <h1>Javite nam se</h1>
-            <p class="lead">Nema registracije ni prijave. Ispunite sva polja. Preglednik neće poslati poruku ako e-adresa nije ispravnog oblika (npr. ime@skola.hr).</p>
+        <div class="wrap page-hero prose">
+            <p class="crumbs"><a href="index.html">Naslovnica</a> / Politika privatnosti</p>
+            <h1>Politika privatnosti</h1>
+            <p class="meta">Zadnje ažuriranje: 15. rujna 2026. Voditelj obrade: Vulnguard d.o.o., Ulica grada Vukovara 269d, 10000 Zagreb, info@vulnguard.hr</p>
+            <h2>Što prikupljamo</h2>
+            <p>Ova stranica nema registraciju ni prijavu. Prikupljamo samo podatke koje sami upišete u kontakt, analizu ili newsletter.</p>
+            <ul>
+                <li>Kontakt i analiza: ime, ustanova, e-adresa, telefon, URL stranice, tekst poruke.</li>
+                <li>Newsletter: samo e-adresa.</li>
+            </ul>
+            <h2>Što radimo s e-adresama</h2>
+            <p>E-adrese iz obrasca za newsletter spremamo u <strong>Mailchimp</strong> (The Rocket Science Group), u listu publike postavljenu za Europsku uniju. Koristimo ih isključivo za slanje kratkih obavijesti o zaštiti i novostima tvrtke. Ne prodajemo popise i ne šaljemo ih oglašivačima.</p>
+            <p>E-adrese iz kontakta i analize spremamo u našu poslovnu evidenciju (zaštićena mapa u Microsoft 365, pristup imaju Ivana Kovač i Luka Jurić) da bismo odgovorili na upit i izdali ponudu.</p>
+            <p>Ova vježbena verzija stranice nema poslužiteljsku bazu: obrazac vas vodi na stranicu zahvale. U produkciji bi se newsletter slao POST zahtjevom u Mailchimp, a kontakt na adresu info@vulnguard.hr, bez ostavljanja adrese u URL-u.</p>
+            <h2>Zašto su podaci kod nas sigurni</h2>
+            <p>Ne držimo lozinke korisnika jer nema korisničkih računa. Stranicu poslužujemo preko HTTPS-a. Pristup Mailchimpu ima dvostruka provjera. Zaposlenici ne preuzimaju popise na privatne USB stickove. Nakon što odjavite newsletter, adresa se briše iz aktivne liste.</p>
+            <h2>Vaša prava</h2>
+            <p>Možete zatražiti uvid, ispravak ili brisanje. Pišite na info@vulnguard.hr. Odjava s newslettera moguća je poveznicom u svakoj poruci.</p>
+            <p>Google karta na stranici Kontakta učitava sadržaj s Googleovih poslužitelja. Ako ne želite tu vezu, ne otvarajte tu stranicu ili koristite postavke preglednika.</p>
         </div>
-        <section>
-            <div class="wrap grid-2">
-                <form class="card" action="https://formspree.io/f/mbgjnewb" method="POST">
-                    <label>Ime i prezime
-                        <input name="ime" type="text" required minlength="2" autocomplete="name">
-                    </label>
-                    <label>Ustanova ili tvrtka
-                        <input name="ustanova" type="text" required autocomplete="organization">
-                    </label>
-                    <label>E-adresa
-                        <input name="email" type="email" required autocomplete="email" placeholder="ime@domena.hr">
-                        <span class="hint">Mora sadržavati znak @ i domenu.</span>
-                    </label>
-                    <label>Telefon
-                        <input name="telefon" type="tel" required autocomplete="tel" minlength="8" placeholder="+385 …">
-                    </label>
-                    <label>Tema
-                        <select name="tema" required>
-                            <option value="">Odaberite…</option>
-                            <option>Analiza stranice</option>
-                            <option>Edukacija zaposlenika</option>
-                            <option>Pomoć nakon incidenta</option>
-                            <option>Nešto drugo</option>
-                        </select>
-                    </label>
-                    <label>Poruka
-                        <textarea name="message" required minlength="15" placeholder="Kratko opišite što trebate."></textarea>
-                    </label>
-                    <label>
-                        <input name="privola" type="checkbox" required value="da" style="width:auto; display:inline; margin-right:0.4rem;">
-                        Pročitao/la sam <a href="privatnost.html">Politiku privatnosti</a> i slažem se da me kontaktirate u vezi ovog upita.
-                    </label>
-                    <button class="btn btn-primary" type="submit">Pošalji poruku</button>
-                </form>
-                <div>
-                    <div class="card">
-                        <h2>Ured</h2>
-                        <p>Vulnguard d.o.o.<br>Ulica grada Vukovara 269d<br>10000 Zagreb</p>
-                        <p>Tel: <a href="tel:+38516177400">+385 1 6177 400</a><br>
-                            E-pošta: <a href="mailto:info@vulnguard.hr">info@vulnguard.hr</a></p>
-                        <p>Radno vrijeme: ponedjeljak–petak, 9–16 h</p>
-                    </div>
-                    <div class="map-wrap" style="margin-top:1rem;">
-                        <iframe title="Karta: Vulnguard, Ulica grada Vukovara 269d, Zagreb" src="https://maps.google.com/maps?q=Ulica%20grada%20Vukovara%20269d%20Zagreb&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
     <footer class="site-footer">
         <div class="wrap footer-grid">
